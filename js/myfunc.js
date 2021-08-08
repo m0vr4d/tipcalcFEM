@@ -1,4 +1,4 @@
-
+ 
 
 let prs, bill = 0, nop = -1;
 reset = function () {
@@ -34,16 +34,19 @@ clearcostum = function(){
 }
 
 setbill = function (e) {
-    bill = e.target.value;
+    bill = Math.abs(document.getElementById("bill").value);
+    document.getElementById("bill").value=bill;
     calc();
 };
 
 settp = function (e) {
-    prs = e.target.value;
+    prs = Math.abs(document.getElementById("costip").value);
+    document.getElementById("costip").value=prs;
     calc();
 };
 setnop = function (e) {
-    nop = e.target.value;
+    nop = Math.abs(document.getElementById("nop").value);
+    document.getElementById("nop").value = nop;
     calc();
 };
 uncheckradio = function () {

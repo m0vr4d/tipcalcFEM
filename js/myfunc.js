@@ -2,8 +2,9 @@
 
 let prs, bill = 0, nop = -1;
 reset = function () {
-    document.getElementById("bill").value = 0;
-    document.getElementById("nop").value = 0;
+    clearcostum();
+    document.getElementById("bill").value = NaN;
+    document.getElementById("nop").value = NaN;
     document.getElementById("tb").innerHTML = "$0.0";
     document.getElementById("bpp").innerHTML = "$0.0";
 };
@@ -30,7 +31,7 @@ calc = function () {
 };
 
 clearcostum = function(){
-    document.getElementById('costip').value=undefined;
+    document.getElementById('costip').value = NaN;
 }
 
 setbill = function (e) {
@@ -40,8 +41,14 @@ setbill = function (e) {
 };
 
 settp = function (e) {
-    prs = Math.abs(document.getElementById("costip").value);
-    document.getElementById("costip").value=prs;
+    if(e.target.name=='tip'){
+        prs=e.target.value;
+        clearcostum()
+    }
+    else{
+        prs = Math.abs(document.getElementById("costip").value);
+        document.getElementById("costip").value=prs;
+    }
     calc();
 };
 setnop = function (e) {

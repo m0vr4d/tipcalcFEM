@@ -16,90 +16,104 @@
   <link rel="stylesheet" href="css/style.css" >
   <script src="js/myfunc.js"></script>
 </head>
-<body>
-  <img src="images/logo.svg" style="margin:5em 45%;">
-  <div class="outerbox">
+  <body>
+    <img alt="splitter logo" src="images/logo.svg" style="margin:5em 45%;">
+    <div class="outerbox">
 
-    <div class="leftbox">
+      <div class="leftbox">
 
-      <p>
-        Bill
-      </p>
-      <div  class="inptbox">
-        <input type="number" min="0" placeholder="0" id="bill" oninput="setbill(event)" class="inpt">
-        <img src="images/icon-dollar.svg" class="inptimg">
-      </div>
-
-      <p>
-        Select Tip %
-      </p>
-      <div class="btns">
-        <label>
-          <input type="radio" value="5"  name="tip" style="display:none;" onClick="settp(event); clearcostum();"/>
-          <span class="btn"> 5% </span>
-        </label>
-        <label>
-          <input type="radio" value="10" name="tip" style="display:none;" onClick="settp(event); clearcostum();"/>
-          <span class="btn"> 10% </span>
-        </label>
-        <label>
-          <input type="radio" value="15" name="tip" style="display:none;" onClick="settp(event); clearcostum();"/>
-          <span class="btn"> 15% </span>
-        </label>
-        <label>
-          <input type="radio" value="25" name="tip" style="display:none;" onClick="settp(event); clearcostum();"/>
-          <span class="btn">25%</span>
-        </label>
-        <label>
-          <input type="radio" value="50" name="tip" style="display:none;" onClick="settp(event); clearcostum();"/>
-          <span class="btn"> 50% </span>
-        </label>
-        <input type="number" min="0" placeholder="Costum" id="costip" oninput="settp(event); uncheckradio();" class="inptbtn">
-      </div>
-
-      <p>Number of People</p>
-      
-      <div class="warning" id="warning">
-        Can't be Zero
-      </div>
-      <div  class="inptbox">
-        <input type="number" min="0" placeholder="0" oninput="setnop(event)" id="nop" class="inpt">
-        <img src="images/icon-person.svg" class="inptimg">
-      </div>
-
-    </div>
-
-    <div class="rightbox">
-      <div>   
-        <div class="vals">
-        
-          <div>
-            Tip Amount<br>
-            <div style="color: hsl(186, 14%, 43%);">/ person</div>
-          </div>
-          <div id="tb" style="font-size: 39px; line-height: 39px; color:hsl(183, 75%, 73%);">
-            $0.0
-          </div>
+        <p>
+          Bill
+        </p>
+        <div  class="inptbox">
+          <input type="number" min="0" placeholder="0" id="bill" oninput="setbill(event)" class="inpt">
+          <img alt="dollar icon" src="images/icon-dollar.svg" class="inptimg">
         </div>
-        <div class="vals">
+
+        <p>
+          Select Tip %
+        </p>
+        <div class="btns">
+          <label>
+            <input type="radio" value="5"  name="tip" style="display:none;" onClick="settp(event);"/>
+              <span class="btn"> 
+                5% 
+              </span>
+          </label>
+          <label>
+            <input type="radio" value="10" name="tip" style="display:none;" onClick="settp(event);"/>
+              <span class="btn">
+                10%
+              </span>
+          </label>
+          <label>
+            <input type="radio" value="15" name="tip" style="display:none;" onClick="settp(event);"/>
+              <span class="btn"> 
+                15% 
+              </span>
+          </label>
+          <label>
+            <input type="radio" value="25" name="tip" style="display:none;" onClick="settp(event);"/>
+              <span class="btn">
+                25%
+              </span>
+          </label>
+          <label>
+            <input type="radio" value="50" name="tip" style="display:none;" onClick="settp(event);"/>
+              <span class="btn"> 
+                50% 
+              </span>
+          </label>
+          <input type="number" min="0" placeholder="Costum" id="costip" oninput="settp(event); uncheckradio();" class="inptbtn">
+        </div>
+
+        <p>
+          Number of People
+        </p>
         
-          <div>
-            Total<br>
-            <div style="color: hsl(186, 14%, 43%);">/ person</div>
-          </div>
-          <div id="bpp" style="font-size: 39px; line-height: 39px; color:hsl(183, 75%, 73%);">
-            $0.0
-          </div>
+        <div class="warning" id="warning">
+          Can't be Zero
+        </div>
+        <div  class="inptbox">
+          <input type="number" min="0" placeholder="0" oninput="setnop(event)" id="nop" class="inpt">
+          <img alt="person icon" src="images/icon-person.svg" class="inptimg">
+        </div>
+
+      </div>
+
+      <div class="rightbox">
+        <div>   
+          <div class="vals">
           
+            <div>
+              Tip Amount<br>
+              <div style="color: hsl(186, 14%, 43%);">/ person</div>
+            </div>
+            <div id="tb" style="font-size: 39px; line-height: 39px; color:hsl(183, 75%, 73%);">
+              $0.0
+            </div>
+          </div>
+          <div class="vals">
+          
+            <div>
+              Total<br>
+              <div style="color: hsl(186, 14%, 43%);">
+                / person
+              </div>
+            </div>
+            <div id="bpp" style="font-size: 39px; line-height: 39px; color:hsl(183, 75%, 73%);">
+              $0.0
+            </div>
+            
+          </div>
         </div>
+        <button type="button" onclick="reset()" class="cybtn">
+          Reset
       </div>
-      <button type="button" onclick="reset()" class="cybtn">
-        Reset
     </div>
-</div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Mourad Tulimat</a>.
-  </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Mourad Tulimat</a>.
+    </div>
 </body>
 </html>

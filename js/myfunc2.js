@@ -1,7 +1,9 @@
  
 
-let prs, bill = 0, nop = -1;
+let prs = 0, bill = 0, nop = -1;
 reset = function () {
+    prs = 0, bill = 0, nop = -1;
+    uncheckradio();
     clearcostum();
     document.getElementById("bill").value = NaN;
     document.getElementById("nop").value = NaN;
@@ -22,6 +24,7 @@ calc = function () {
         document.getElementById("bpp").innerHTML = "$0.0";
         return;
     }
+    if(prs==0)return;
     let tb = (bill * prs) / 100;
     document.getElementById("nop").style.borderColor="hsl(183, 75%, 73%)";
     document.getElementById('warning').style.opacity = 0;

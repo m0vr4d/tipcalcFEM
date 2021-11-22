@@ -25,7 +25,7 @@ calc = function () {
         return;
     }
     if(prs==0)return;
-    let tb = (bill * prs) / 100;
+    let tb = (bill * prs) / 200;
     document.getElementById("nop").style.borderColor="hsl(183, 75%, 73%)";
     document.getElementById('warning').style.opacity = 0;
     document.getElementById("tb").innerHTML = "$" + (tb / nop).toFixed(2);
